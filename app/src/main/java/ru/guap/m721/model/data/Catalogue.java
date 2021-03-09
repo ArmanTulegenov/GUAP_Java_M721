@@ -1,4 +1,4 @@
-package ru.guap.m721.data.model;
+package ru.guap.m721.model.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -21,11 +22,16 @@ public class Catalogue {
     @Column(length = 36, nullable = false, updatable = false)
     private UUID id;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "price")
+    private Set<Price> priceSet;
     @Column(name = "short_name", nullable = false)
     private String shortName;
     @Column(name = "full_name", nullable = false)
     private String fullName;
     @Column(name = "description", nullable = false)
     private String description;
+    @Column(name = "record_status", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private RecordStatus recordStatus;
 
 }

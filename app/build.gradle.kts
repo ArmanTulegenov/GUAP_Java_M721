@@ -62,8 +62,10 @@ dependencies {
 //    mainClass.set("ru.guap.m721.App")
 //}
 
+
+
 tasks.test {
-    // Use junit platform for unit tests.
+    // Use junit platform for unit tests.Å
     useJUnitPlatform()
 }
 

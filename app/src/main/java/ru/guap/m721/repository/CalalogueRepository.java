@@ -1,8 +1,8 @@
-package ru.guap.m721.data.repository;
+package ru.guap.m721.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.guap.m721.data.model.Catalogue;
+import ru.guap.m721.model.data.Catalogue;
 
 import java.util.UUID;
 
