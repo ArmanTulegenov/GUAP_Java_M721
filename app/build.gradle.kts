@@ -35,11 +35,9 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter API for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 
-    // Use JUnit Jupiter Engine for testing.
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    compileOnly("org.projectlombok:lombok")
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
@@ -50,11 +48,18 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("io.springfox:springfox-boot-starter:3.0.0")
     implementation("io.springfox:springfox-swagger-ui:2.9.2")
-    compileOnly("org.projectlombok:lombok")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    runtimeOnly("org.postgresql:postgresql")
+    implementation("org.mapstruct:mapstruct:1.4.2.Final")
+
     annotationProcessor("org.projectlombok:lombok")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.4.2.Final")
+
+    // Use JUnit Jupiter Engine for testing.
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    // Use JUnit Jupiter API for testing.
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    runtimeOnly("org.postgresql:postgresql")
 }
 
 //application {

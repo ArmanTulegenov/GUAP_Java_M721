@@ -1,17 +1,16 @@
 package ru.guap.m721.mapper;
 
+
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import ru.guap.m721.model.data.Catalogue;
+import ru.guap.m721.model.data.Price;
 import ru.guap.m721.model.dto.CatalogueDto;
 
-public class CatalogueMapper {
+@Mapper(componentModel = "spring")
+public interface CatalogueMapper {
 
-    public static CatalogueDto map(Catalogue catalogue) {
-        CatalogueDto catalogueDto = new CatalogueDto();
-        catalogueDto.setId(catalogue.getId());
-        catalogueDto.setShortName(catalogue.getShortName());
-        catalogueDto.setFullName(catalogue.getFullName());
-        catalogueDto.setDescription(catalogue.getDescription());
-        return catalogueDto;
-    }
+    @Mapping(target= "id", source = "catalogue.id")
+    CatalogueDto map(Catalogue catalogue, Price price);
 
 }
